@@ -15,7 +15,7 @@ bot.on('message', msg => {
 });
 
 bot.on('message', msg => {
-  let blacklist = new Array('Nigger', 'Nigga', 'Nogger', 'Nogga', 'Nagger', 'Nagga', 'Nugger', 'Nugga', 'Negger', 'Negga', 'Nikker', 'Nikka', 'Nixxer', 'Nixxa', 'N1g'); //list of n-bombs
+  let blacklist = new Array('Nigger', 'Nigga', 'Nogger', 'Nogga', 'Nagger', 'Nagga', 'Nugger', 'Nugga', 'Negger', 'Negga', 'Nikker', 'Nikka', 'Nixxer', 'Nixxa', 'N1g', 'Nig '); //list of n-bombs
   let foundInText = false; //default text in messages (i.e. not an n-bomb)
   for (var i in blacklist) { //goes through each n-bomb in the list
     if (msg.content.toLowerCase().includes(blacklist[i].toLowerCase())) //if the message has one in it
@@ -24,19 +24,6 @@ bot.on('message', msg => {
   if (foundInText) { //if n-bomb confirmed
     msg.delete(); //gets rid of n-bomb message
     msg.reply("Yikes! Let's not do that!"); //profit
-  }
-});
-
-bot.on('message', msg => {
-  let catches = new Array('Neg ', 'Nig ', 'Nog ', 'Nug '); //list of n-bomb variations that might ding if theye are in other words (ex. Nightfall)
-  let caught = false; //default text in messages (i.e. not just an n-bomb variation)
-  for (var x in catches) { //goes through each variation
-    if (msg.content.toLowerCase() === catches[i].toLowerCase()) //if the message is just a variation
-      caught = true; //variation confirmed
-    }
-  if (caught) { //if variation confirmed
-    msg.delete(); //dletes message with variation
-    msg.reply('Whoops! Nice try, forehead!'); //profit
   }
 });
 
