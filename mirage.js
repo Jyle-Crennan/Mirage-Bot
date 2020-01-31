@@ -21,10 +21,8 @@ bot.on('message', msg => {
     if (msg.content.toLowerCase().includes(blacklist[i].toLowerCase()));
       foundInText = true;
   }
-  if (foundInText) {
-    msg.delete();
+  if (foundInText)
     msg.reply('Whoops! Try again, dumbass!');
-  }
 });
 
 bot.on('message', msg => {
