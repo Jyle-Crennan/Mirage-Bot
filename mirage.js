@@ -15,10 +15,10 @@ bot.on('message', msg => {
 });
 
 bot.on('message', msg => {
-  let blacklist = new Array('Nigger', 'Nigga', 'Nogger','Nagger', 'Nugger', 'Negger', 'Nig', 'Nikker', 'Nixxer');
+  let blacklist = new Array('Nigger', 'Nigga', 'Nogger','Nagger', 'Nugger', 'Negger', 'Nikker', 'Nixxer');
   let foundInText = false;
   for (var i in blacklist) {
-    if (msg.content.toLowerCase().includes(blacklist[i].toLowerCase()))
+    if (msg.content.toLowerCase().includes(blacklist[i].toLowerCase()) || msg.content.toLowerCase() === 'nig'); 
       foundInText = true;
   }
   if (foundInText) {
