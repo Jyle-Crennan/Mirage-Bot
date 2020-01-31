@@ -15,14 +15,16 @@ bot.on('message', msg => {
 });
 
 bot.on('message', msg => {
-  let blacklist = new Array('Nigger', 'Nigga', 'Nogger','Nagger', 'Nugger', 'Negger', 'Nikker', 'Nixxer');
-  let foundInText = false;
-  for (var i in blacklist) {
-    if (msg.content.toLowerCase().includes(blacklist[i].toLowerCase()));
-      foundInText = true;
+  let blacklist = new Array('Nigger', 'Nigga', 'Nogger','Nagger', 'Nugger', 'Negger', 'Nig', 'Nikker', 'Nixxer'); //list of n-bombs
+  let foundInText = false; //default text in messages (i.e. not an n-bomb)
+  for (var i in blacklist) { //goes through each n-bomb in the list
+    if (msg.content.toLowerCase().includes(blacklist[i].toLowerCase())) //if the message has one in it
+      foundInText = true; //n-bomb confirmed
   }
-  if (foundInText)
-    msg.reply('Whoops! Try again, dumbass!');
+  if (foundInText) { //if n-bomb confirmed
+    msg.delete(); //gets rid of n-bomb message
+    msg.reply('Whoops! Try again, dumbass!'); //profit
+  }
 });
 
 bot.on('message', msg => {
