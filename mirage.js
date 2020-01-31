@@ -41,4 +41,3 @@ bot.on('message', msg => {
       msg.channel.send(about);
     }
 });
-
