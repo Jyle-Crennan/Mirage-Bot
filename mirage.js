@@ -10,8 +10,7 @@ bot.on('ready', () => {
 bot.on('message', msg => {
   if (msg.content === '?hey') {
     msg.delete();
-    msg.channel.send('Hello world!');
-    msg.delete(3000);
+    msg.channel.send('Eyes up!');
   }
 });
 
@@ -42,3 +41,4 @@ bot.on('message', msg => {
       msg.channel.send(about);
     }
 });
+
