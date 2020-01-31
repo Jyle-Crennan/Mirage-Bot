@@ -48,3 +48,20 @@ bot.on('message', msg => {
       msg.channel.send(about);
     }
 });
+
+bot.on('message', msg => {
+  var ranks = new Discord.RichEmbed()
+    .setTitle('Server Raid Ranks')
+    .addField('_Master_', '~ 100+ clears', true)
+    .addField('_Expert_', '~ 50-99 clears', true)
+    .addField('_Advanced_', '~ 25-49 clears', true)
+    .addField('_Intermediate_', '~ 10-24 clears', true)
+    .addField('_Beginner_', '~ 0-9 clears', true)
+    .setColor(0x58ffe2)
+    .setThumbnail('https://safeboost.net/wp-content/uploads/2019/04/raids-destiny-2.png')
+    .setFooter('`All ranks are subject to change if need be`')
+    if (msg.content === '?ranks') {
+      msg.delete();
+      msg.channel.send(ranks);
+    }
+});
