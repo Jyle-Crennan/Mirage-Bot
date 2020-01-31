@@ -59,7 +59,7 @@ bot.on('message', msg => {
     .addField('_Beginner_', '~ 0-9 clears', true)
     .setColor(0x58ffe2)
     .setThumbnail('https://safeboost.net/wp-content/uploads/2019/04/raids-destiny-2.png')
-    .setFooter('`All ranks are subject to change if need be`')
+    .setFooter('All ranks are subject to change if need be')
     if (msg.content === '?ranks') {
       msg.delete();
       msg.channel.send(ranks);
