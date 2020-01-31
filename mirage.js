@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-bot.login(process.env.'NjcyMjE0MjA2Njk4ODgxMDM0.XjOyiw.2FmUQKol_Ek7iL3W2buCgfc0wtk');
+bot.login(process.env.BOT_TOKEN);
 
 bot.on('ready', () => {
   console.log('Mirage is online and ready to help!');
