@@ -65,22 +65,3 @@ bot.on('message', msg => {
       msg.channel.send(ranks);
     }
 });
-
-bot.on('message', msg => {
-  if (msg.content.startsWith('?poll ')) {
-    if (!msg.member.hasPermission('ADMINISTRATOR')) 
-      msg.channel.send('This action requires permission: ADMINISTRATOR');
-    else {
-      var qstn = msg.content.slice(6, msg.content.length);
-      var polls = new Discord.RichEmbed()
-        .setTitle('Poll made by ' + msg.author.username)
-        .setColor(0x58ffe2)
-        .setDescription(qstn)
-        .setFooter('React to vote.')
-      msg.delete();
-      msg.channel.send(polls);
-      await msg.react(':white_check_mark:');
-      await msg.react(':negative_squared_cross_mark:');
-    }
-  }
-});
