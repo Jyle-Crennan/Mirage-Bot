@@ -87,7 +87,7 @@ bot.on('message', msg => {
         .setColor(0x58ffe2)
         .setFooter('React to vote.')
         .setDescription(args.join(' '))
-        .setTitle('Poll Created By ${msg.author.username}');
+        .setTitle(`Poll Created By ${msg.author.username}`);
       let mes = await msg.channel.send(polling);
       await mes.react('👍');
       await mes.react('👎');
