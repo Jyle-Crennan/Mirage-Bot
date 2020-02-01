@@ -72,26 +72,3 @@ bot.on('message', msg => {
       msg.channel.send(ranks);
     }
 });
-
-bot.on('message', msg => {
-  const args = msg.content.slice(prefix.length).split(' ');
-  const command = args.shift().toLowerCase();
-  if (!msg.content.startsWith(prefix) || msg.author.bot) {
-    return;
-  }
-  else if (command === 'poll') {
-    if (!args[0]) 
-      return msg.channel.send('`Proper Usage: <prefix>poll [question]`');
-    else {
-      const polling = new Discord.RichEmbed()
-        .setColor(0x58ffe2)
-        .setFooter('React to vote.')
-        .setDescription(args.join(' '))
-        .setTitle(`Poll Created By ${msg.author.username}`);
-      var mes = msg.channel.send(polling);
-      mes.react('👍');
-      mes.react('👎');
-      msg.delete({timeout: 1000});
-    }
-  }
-});
