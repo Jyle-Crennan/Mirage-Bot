@@ -65,23 +65,3 @@ bot.on('message', msg => {
       msg.channel.send(ranks);
     }
 });
-
-bot.on('message', msg => {
-  if (msg.content === '?poll') {
-    if (!msg.member.has('ADMINISTRATOR')) {
-      msg.delete(3000);
-      msg.channel.send('This action requires permission: ADMINISTRATOR');
-    }
-    else {
-      var polls = new Discord.RichEmbed()
-        .setTitle('Poll created by' + msg.author.username)
-        .setColor(0x58ffe2)
-        .setDescription('This is a yes or no survey test.')
-        .setFooter('React to vote.');
-      msg.delete();
-      msg.channel.send(polls);
-      msg.react('✅');
-      msg.react('❎');
-    }
-  }
-});
