@@ -74,7 +74,7 @@ bot.on('message', msg => {
 });
 
 bot.on('message', msg => {
-  const args = msg.content.slice(prefix.length).split(/ +/);
+  const args = msg.content.slice(prefix.length).split(' ');
   const command = args.shift().toLowerCase();
   if (!msg.content.startsWith(prefix) || msg.author.bot) {
     return;
@@ -88,9 +88,9 @@ bot.on('message', msg => {
         .setFooter('React to vote.')
         .setDescription(args.join(' '))
         .setTitle(`Poll Created By ${msg.author.username}`);
-      let mes = await msg.channel.send(polling);
-      await mes.react('👍');
-      await mes.react('👎');
+      var mes = msg.channel.send(polling);
+      mes.react('👍');
+      mes.react('👎');
       msg.delete({timeout: 1000});
     }
   }
