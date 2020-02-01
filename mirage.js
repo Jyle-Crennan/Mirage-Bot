@@ -68,14 +68,14 @@ bot.on('message', msg => {
 
 bot.on('message', msg => {
   const poll = new Discord.RichEmbed()
-    .setTitle('Poll created by ' + msg.author.username)
+    .setTitle('Poll created by ' + ${msg.author.username})
     .setDescription('This is a test.')
     .setColor(0x058ffe2)
     .setFooter('React to vote.')
   if (msg.content === '?poll') {
     msg.delete();
     msg.channel.send(poll);
-    msg.react('👍').then(console.log).catch(console.error);
-    msg.react('👎').then(console.log).catch(console.error);
+    await msg.react('👍');
+    await msg.react('👎');
   }
 });
