@@ -67,17 +67,21 @@ bot.on('message', msg => {
 });
 
 bot.on('message', msg => {
-  var str = msg.content.toString();
-  if (str.includes('?poll', 0)) {
-      var qstn = msg.content.slice(6, str.length());
+  if (msg.content.startsWith('?poll') {
+    if (!msg.member.hasPermission('ADMINISTRATOR')) {
+      msg.delete(3000);
+      msg.channel.send('This action requires permission: ADMINISTRATOR');
+    }
+    else {
       var polls = new Discord.RichEmbed()
-        .setTitle('Poll made by' + msg.author.username)
+        .setTitle('Poll created by' + msg.author.username)
         .setColor(0x58ffe2)
-        .setDescription(qstn)
+        .setDescription('This is a yes or no survey test.')
         .setFooter('React to vote.');
       msg.delete();
       msg.channel.send(polls);
-      msg.react(':white_check_mark:');
-      msg.react(':negative_squared_cross_mark:');
+      msg.react('✅');
+      msg.react('❎');
+    }
   }
 });
