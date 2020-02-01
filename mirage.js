@@ -73,7 +73,7 @@ bot.on('message', msg => {
     else {
       var qstn = msg.content.slice(6, msg.content.length);
       var polls = new Discord.RichEmbed()
-        .setTitle(`Poll made by ${msg.author.username}`)
+        .setTitle('Poll made by ' + msg.author.username)
         .setColor(0x58ffe2)
         .setDescription(qstn)
         .setFooter('React to vote.')
