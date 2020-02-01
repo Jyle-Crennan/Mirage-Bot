@@ -65,3 +65,17 @@ bot.on('message', msg => {
       msg.channel.send(ranks);
     }
 });
+
+bot.on('message', msg => {
+  var poll = new Discord.RichEmbed()
+    .setTitle('Poll created by ' + msg.author.username)
+    .setDescription('This is a test.')
+    .setColor(0x058ffe2)
+    .setFooter('React to vote.')
+  if (msg.content === '?poll') {
+    msg.delete();
+    msg.channel.send(poll);
+  }
+  msg.react('👍').then(console.log).catch(console.error);
+  msg.react('👎').then(console.log).catch(console.error);
+});
