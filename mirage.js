@@ -67,8 +67,8 @@ bot.on('message', msg => {
 });
 
 bot.on('message', msg => {
-  if (msg.content.startsWith('?poll') {
-    if (!msg.member.hasPermission('ADMINISTRATOR')) {
+  if (msg.content === '?poll') {
+    if (!msg.member.has('ADMINISTRATOR')) {
       msg.delete(3000);
       msg.channel.send('This action requires permission: ADMINISTRATOR');
     }
