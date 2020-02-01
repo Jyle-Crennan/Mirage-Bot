@@ -7,7 +7,9 @@ bot.on('ready', () => {
   console.log('Mirage is online and ready to help!');
 });
 
-bot.user.setGame('Destiny 3');
+bot.on('ready', () => {
+  bot.user.setGame('Destiny 3')
+})
 
 bot.on('message', msg => {
   if (msg.content === '?hey') {
