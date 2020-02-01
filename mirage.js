@@ -69,9 +69,6 @@ bot.on('message', msg => {
 bot.on('message', msg => {
   var str = msg.content.toString();
   if (str.includes('?poll', 0)) {
-    if (!msg.member.hasPermission('ADMINISTRATOR')) 
-      msg.channel.send('This action requires permission: ADMINISTRATOR');
-    else {
       var qstn = msg.content.slice(6, str.length());
       var polls = new Discord.RichEmbed()
         .setTitle('Poll made by' + msg.author.username)
@@ -82,6 +79,5 @@ bot.on('message', msg => {
       msg.channel.send(polls);
       msg.react(':white_check_mark:');
       msg.react(':negative_squared_cross_mark:');
-    }
   }
 });
