@@ -68,3 +68,19 @@ bot.on('message', msg => {
       msg.channel.send(ranks);
     }
 });
+
+bot.on('message', msg => {
+  let helplist = new Discord.RichEmbed()
+    .setTitle('Command List')
+    .setColor(0x58ffe2)
+    .addField("**?about**", "> View the clan's mission statement, in-game requirements in order to join, and the higher-ups in charge of everything. You can see more information not listed in the 'rules-and-regs' and 'announcements' chats.")
+    .addField("**?polls**", "> Set up a yes or no answer questionairre for members to submit their response to as a vote in the form of reactions. After a period of time, the poll wil end and the reactions will be tallied up. (COMING SOON)")
+    .addField("**?ranks**", "> View all of the required raid completions needed for each level of the server's ranking system. Higher ranks show more experience in a particular raid.")
+    .addField("**?help**", "> You're already looking at the command list, but if you didn't know, this command takes you to this very message. All of the commands that Mirage Ghost follows are listed here.")
+    .setThumbnail(bot.user.avatarURL)
+    .setFooter('[If a command listed says it is coming soon, it does not work and will be implemeted at a later date. Thank you for your patience. ~Jy1e]')
+  if (msg.content === '?help') {
+    msg.delete();
+    msg.channel.send(helplist);
+  }
+});
