@@ -32,6 +32,7 @@ bot.on('message', msg => {
   else if (foundInText) { //if n-bomb confirmed
     msg.delete(); //gets rid of n-bomb message
     msg.reply("Yikes! Let's not do that!"); //profit
+  }
 });
 
 bot.on('message', msg => {
