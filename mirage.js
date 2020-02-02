@@ -20,23 +20,18 @@ bot.on('message', msg => {
 });
 
 bot.on('message', msg => {
-  let blacklist = new Array('Nigger', 'Nigga', 'Nogger', 'Nogga', 'Nagger', 'Nagga', 'Nugger', 'Nugga', 'Negger', 'Negga', 'Nikker', 'Nikka', 'Nixxer', 'Nixxa', 'N1g', 'Nig ', ' Nig'); //list of n-bombs
+  let blacklist = new Array('Nigger', 'Nigga', 'Nogger', 'Nogga', 'Nagger', 'Nagga', 'Nugger', 'Nugga', 'Negger', 'Negga', 'Nikker', 'Nikka', 'Nixxer', 'Nixxa', 'N1g', 'Nig'); //list of n-bombs
+  let except = 'Night';
   let foundInText = false; //default text in messages (i.e. not an n-bomb)
-  let caught = false;
   for (var i in blacklist) { //goes through each n-bomb in the list
     if (msg.content.toLowerCase().includes(blacklist[i].toLowerCase())) //if the message has one in it
       foundInText = true; //n-bomb confirmed
-    else if (msg.content.toLowerCase() === 'nig')
-      caught = true;
   }
-  if (foundInText) { //if n-bomb confirmed
+  if (msg.content.toLowerCase().includes(except.toLowerCase())) 
+    return;
+  else if (foundInText) { //if n-bomb confirmed
     msg.delete(); //gets rid of n-bomb message
     msg.reply("Yikes! Let's not do that!"); //profit
-  }
-  else if (caught) {
-    msg.delete();
-    msg.reply("Whoops! Nice try tho, idiot!");
-  }
 });
 
 bot.on('message', msg => {
