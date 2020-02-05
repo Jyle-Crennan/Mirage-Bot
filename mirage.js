@@ -84,3 +84,17 @@ bot.on('message', msg => {
     msg.channel.send(helplist);
   }
 });
+
+bot.on('message', msg => {
+  if (msg.content.toLowerCase().startsWith("?banish")) {
+    if (!msg.author.hasPermission("MANAGE_ROLES"))) {
+      msg.delete();
+      msg.channel.send("Request denied. Requires Clan Admin status to banish someone to the fucking shadow realm, you fool!");
+    }
+    else {
+      msg.delete();
+      var args = msg.content.toLowerCase().split(" ");
+      msg.channel.send("I BANISH " + args[1] + " TO THE FUCKING SHADOW REALM! LMAOOOOO REKT")
+    }
+  }
+  });
