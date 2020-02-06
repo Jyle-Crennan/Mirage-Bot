@@ -8,7 +8,7 @@ bot.on('ready', () => {
 });
 
 bot.on('ready', () => {
-  bot.user.setGame('Destiny 3')
+  bot.user.setGame('Destiny 3');
 });
 
 bot.on('message', msg => {
