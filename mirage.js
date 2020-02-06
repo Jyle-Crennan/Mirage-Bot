@@ -85,14 +85,3 @@ bot.on('message', msg => {
   }
 });
 
-bot.on('messasge', msg => {
-  const metas = new Discord.RichEmbed()
-    .setTitle('Raid Boss Loadouts')
-    .setColor(0x58ffe2)
-    .addField("__Emperor Calus__ (Levi)", "- 1x Divinity\n- 5x Izanagi's + 150-rpm Spike GLs\n- Striking Hand\n- 1x Well of Radiance w/ Luna & Emperor's Blaze")
-    .addField("__Argos__ (EoW)", "- 5x Triple Tap w/ Firing Line Snipers + Anarchy\n- Striking Hand\n- 1x Shadowshot (tether the tail)\n- 4x Golden Guns w/ Celestial & Emperor's Blaze\n- 1x Well of Radiance w/ Luna & Emperor's Blaze\n- 1x Ward of Dawn")
-  if (msg.content === '?metas') {
-    msg.delete();
-    msg.channel.send(metas);
-  }
-});
