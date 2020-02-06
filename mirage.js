@@ -45,7 +45,7 @@ bot.on('message', msg => {
     .addField('__Server Staff__', '**angrywalrus7 (owner)**\nAsashin\nJy1e', true)
     .setColor(0x58ffe2)
     .setThumbnail(bot.user.avatarURL)
-    .setFooter("[Note: Any questions about Mirage Ghost should go to @Jy1e]")
+    .setFooter("[Note: Any questions about Mirage Ghost should go to @Jy1e]");
     if (msg.content === '?about') {
       msg.delete();
       msg.channel.send(about);
@@ -62,7 +62,7 @@ bot.on('message', msg => {
     .addField('__Beginner__', '0-9 clears', true)
     .setColor(0x58ffe2)
     .setThumbnail('https://safeboost.net/wp-content/uploads/2019/04/raids-destiny-2.png')
-    .setFooter('***All ranks are subject to change if need be')
+    .setFooter('***All ranks are subject to change if need be');
     if (msg.content === '?ranks') {
       msg.delete();
       msg.channel.send(ranks);
@@ -77,8 +77,9 @@ bot.on('message', msg => {
     .addField("**?polls**", "> Set up a yes or no answer questionairre for members to submit their response to as a vote in the form of reactions. After a period of time, the poll wil end and the reactions will be tallied up. (COMING SOON)")
     .addField("**?ranks**", "> View all of the required raid completions needed for each level of the server's ranking system. Higher ranks show more experience in a particular raid.")
     .addField("**?help**", "> You're already looking at the command list, but if you didn't know, this command takes you to this very message. All of the commands that Mirage Ghost follows are listed here.")
+    .addField("**?metas**", "> View all of the best loadouts for each raid boss in the game, which includes the Supers, weapons, Exotics, and mods for each member to have the most ideal run for easy clears.")
     .setThumbnail(bot.user.avatarURL)
-    .setFooter('[If a command listed says it is coming soon, it does not work and will be implemeted at a later date. Thank you for your patience. ~Jy1e]')
+    .setFooter('[If a command listed says it is coming soon, it does not work and will be implemeted at a later date. Thank you for your patience. ~Jy1e]');
   if (msg.content === '?help') {
     msg.delete();
     msg.channel.send(helplist);
@@ -87,7 +88,7 @@ bot.on('message', msg => {
 
 bot.on('mesasge', msg => {
   let metas = new Discord.RichEmbed()
-    .setTitle('Raid Boss Loadouts [Destiny 2]')
+    .setTitle('Raid Boss Loadouts')
     .setColor(0x58ffe2)
     .addField("__Emperor Calus__ (Levi)", "- 1x Divinity\n- 5x Izanagi's + 150-rpm Spike GLs\n- Striking Hand\n- 1x Well of Radiance w/ Luna & Emperor's Blaze")
     .addField("__Argos__ (EoW)", "- 5x Triple Tap w/ Firing Line Snipers + Anarchy\n- Striking Hand\n- 1x Shadowshot (tether the tail)\n- 4x Golden Guns w/ Celestial & Emperor's Blaze\n- 1x Well of Radiance w/ Luna & Emperor's Blaze\n- 1x Ward of Dawn")
