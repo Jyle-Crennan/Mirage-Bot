@@ -3,6 +3,8 @@ const bot = new Discord.Client();
 
 bot.login(process.env.BOT_TOKEN);
 
+const prefix = '?';
+
 bot.on('ready', () => {
   console.log('Mirage is online and ready to help!');
 });
@@ -125,5 +127,29 @@ bot.on('message', msg => {
   if (msg.content === '?metas') {
     msg.delete();
     msg.channel.send(metas);
+  }
+});
+
+bot.on('message', msg => {
+  const args = msg.content.slice(prefix.length).split(/ +/);
+  const command = args.shift().toLowerCase();
+  if (!msg.content.startsWith(prefix) || msg.author.bot)
+    return;
+  else if (command === 'poll') {
+    if (!args[0])
+      msg.reply('Please include a question in your poll.');
+    else {
+      const poll = new Discord.RichEmbed()
+        .setColor(0x58ffe2)
+        .setFooter('React to vote. Please do not add more reactions to the poll.')
+        .setDescription(args.join(' '))
+        .setTitle(`Poll Created by ${msg.author.username}`);
+      msg.channel.send(poll)
+        .then((newMessage) => {
+          newMessage.react('✅')
+          .then(newMessage.react('⛔'))
+        });
+      msg.delete({timeout: 1000});
+    }
   }
 });
