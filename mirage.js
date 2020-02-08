@@ -52,8 +52,8 @@ bot.on('message', msg => {
 });
 
 bot.on('message', msg => {
-  var ranks = new Discord.RichEmbed()
-    .setTitle('Server Raid Ranks')
+  const clears = new Discord.RichEmbed()
+    .setTitle('Server Raid Ranks (Clears)')
     .addField('__Master__', '100+ clears', true)
     .addField('__Expert__', '50-99 clears', true)
     .addField('__Advanced__', '25-49 clears', true)
@@ -62,10 +62,29 @@ bot.on('message', msg => {
     .setColor(0x58ffe2)
     .setThumbnail('https://safeboost.net/wp-content/uploads/2019/04/raids-destiny-2.png')
     .setFooter('***All ranks are subject to change if need be');
-    if (msg.content === '?ranks') {
-      msg.delete();
-      msg.channel.send(ranks);
-    }
+  if (msg.content === '?clearranks') {
+    msg.delete();
+    msg.channel.send(clears);
+  }
+});
+
+bot.on('message', msg => {
+  const speeds = new Discord.RichEmbed()
+    .setTitle('Server Raid Ranks (Speeds)')
+    .addField('__Leviathan__', 'Master: 20 minutes\nExpert: 25 minutes\nIntermediate: 30 minutes\nBeginner: 35+ minutes', true)
+    .addField('__Eater of Worlds__', 'Master: 20 minutes\nExpert: 25 minutes\nIntermediate: 30 minutes\nBeginner: 35+ minutes', true)
+    .addField('__Spire of Stars__', 'Master: 20 minutes\nExpert: 25 minutes\nIntermediate: 30 minutes\nBeginner: 35+ minutes', true)
+    .addField('__Last Wish__', 'Master: 10 minutes\nExpert: 15 minutes\nIntermediate: 20 minutes\nBeginner: 25+ minutes', true)
+    .addField('__Scourge of the Past__', 'Master: 10 minutes\nExpert: 15 minutes\nIntermediate: 20 minutes\nBeginner: 25+ minutes', true)
+    .addField('__Crown of Sorrow__', 'Master: 20 minutes\nExpert: 25 minutes\nIntermediate: 30 minutes\nBeginner: 35+ minutes', true)
+    .addField('__Garden of Salvation__', 'Master: 25 minutes\nExpert: 30 minutes\nIntermediate: 35 minutes\nBeginner: 40+ minutes', true)
+    .setColor(0x58ffe2)
+    .setThumbnail('https://safeboost.net/wp-content/uploads/2019/04/raids-destiny-2.png')
+    .setFooter('***All ranks are subject to change if need be');
+  if (msg.content === '?speedranks') {
+    msg.delete();
+    msg.channel.send(speeds);
+  }
 });
 
 bot.on('message', msg => {
@@ -74,7 +93,8 @@ bot.on('message', msg => {
     .setColor(0x58ffe2)
     .addField("**?about**", "> View the clan's mission statement, in-game requirements in order to join, and the higher-ups in charge of everything. You can see more information not listed in the 'rules-and-regs' and 'announcements' chats.")
     .addField("**?polls**", "> Set up a yes or no answer questionairre for members to submit their response to as a vote in the form of reactions. After a period of time, the poll wil end and the reactions will be tallied up. (COMING SOON)")
-    .addField("**?ranks**", "> View all of the required raid completions needed for each level of the server's ranking system. Higher ranks show more experience in a particular raid.")
+    .addField("**?clearranks**", "> View all of the required raid completions needed for each level of the server's ranking system. Higher ranks show more total clears in a particular raid.")
+    .addField("**?speedranks**", "> View all of the required raid time trials needed for each level of the server's ranking system. Higher ranks show faster times for a full clear in a particular raid.")
     .addField("**?help**", "> You're already looking at the command list, but if you didn't know, this command takes you to this very message. All of the commands that Mirage Ghost follows are listed here.")
     .addField("**?metas**", "> View all of the best loadouts for each raid boss in the game, which includes the Supers, weapons, Exotics, and mods for each member to have the most ideal run for easy clears. (COMING SOON)")
     .setThumbnail(bot.user.avatarURL)
