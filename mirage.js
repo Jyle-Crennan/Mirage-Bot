@@ -25,9 +25,9 @@ bot.on('message', msg => {
 
 bot.on('guildMemberAdd', member => {
 
-	var rc = member.guild.roles.find('name', 'Raid Clears');
+	var rc = member.guild.roles.find('name', '⁣           Raid Clears');
   
-  var rs = member.guild.roles.find('name', 'Raid Speed')
+  var rs = member.guild.roles.find('name', '⁣           Raid Speed')
 
 	member.addRole(rc);
   
