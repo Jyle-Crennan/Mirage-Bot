@@ -253,7 +253,7 @@ bot.on('message', msg => {
 
 bot.on('message', msg => {
 
-  const args = msg.content.slice(prefix.length).split(/ +/); //takes the message and creates a new string with everything after the prefix. It also splits up the string into an array of substrings. 
+  const args = msg.content.slice(prefix.length).split(/ +/); //takes the message and creates a new string with everything after the prefix. It also splits up the string into an array of substrings.
 
   const command = args.shift().toLowerCase(); //takes the new array, args, and takes the first item (i.e. 'banish') from the array
 
@@ -261,19 +261,27 @@ bot.on('message', msg => {
 
     return; //ignore
 
-  else if (!msg.member.hasPermission('MANAGE_MESSAGES')) //if the author does not have the ability to manage messages...
+  else if (!msg.member.hasPermission('MANAGE_MESSAGES')) {//if the author does not have the ability to manage messages...
 
     return msg.channel.send('This action requires you to be able to have permission: MANAGE_MESSAGES'); //ignore and tell them to fuck off basically
-    
+
+    msg.delete();
+
+  }
+
   else if (command === 'banish') //other than that tho...
 
-  let bUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0])); 
+  var bUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
 
-  let bReason = args.join(" ").slice(22);
+  var bReason = args.join(" ").slice(22);
 
-    if (!bUser)
+    if (!bUser) {
 
       return msg.channel.send('This user does not exist. Please be sure that the name of the user you are trying to find is entered correctly');
+
+      msg.delete();
+
+    }
 
     else {
 
@@ -286,12 +294,14 @@ bot.on('message', msg => {
         .addField('Occured At', msg.createdAt)
         .addField('Reason', bReason);
 
-      let banRole = member.guild.roles.find('name', 'SHADOW REAL@');
+      let banRole = msg.member.guild.roles.find('name', 'SHADOW REAL@');
 
       msg.guild.member(bUser).addRole(banRole);
 
       msg.channel.send(banEmbed);
 
+      msg.delete();
+
     }
-    
+
 });
