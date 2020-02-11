@@ -21,6 +21,22 @@ bot.on('message', msg => {
 
 
 
+//Adds rank roles to new members
+
+bot.on('guildMemberAdd', member => {
+
+	var rc = member.guild.roles.find('name', 'Raid Clears');
+  
+  var rs = member.guild.roles.find('name', 'Raid Speed')
+
+	member.addRole(rc);
+  
+  member.addRole(rs);
+
+});
+
+
+
 //N-word filtering
 
 bot.on('message', msg => {
