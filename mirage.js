@@ -166,11 +166,14 @@ bot.on('message', msg => {
     .setTitle('Command List')
     .setColor(0x58ffe2)
     .addField("**?about**", "> View the clan's mission statement, in-game requirements in order to join, and the higher-ups in charge of everything. You can see more information not listed in the 'rules-and-regs' and 'announcements' chats.")
-    .addField("**?poll [question]**", "> Set up a yes or no answer questionairre for members to submit their response to as a vote in the form of reactions. To use properly, type your question after the command in the same message.")
+    .addField("**?banish [user] [reason]** *(Admin Only)*", "> You REALLY don't want to be on the recieving end of this. It is not a ban, but more of a warning and acts as a way to public;y humiliate fools lmaooo.")
+    .addField("**?calc [x] [y] [z]**", "> Serves as a damage calculator that simply takes in a damage value (x), the weapon type (y), and the weapon's fire rate (z) which will return the potential DPS yield for the weapon. Also, a list of other factors will be included, such as Luna Well, applied debuffs, and perks unique to the weapon type [COMMING SOON]")
     .addField("**?clearranks**", "> View all of the required raid completions needed for each level of the server's ranking system. Higher ranks show more total clears in a particular raid.")
-    .addField("**?speedranks**", "> View all of the required raid time trials needed for each level of the server's ranking system. Higher ranks show faster times for a full clear in a particular raid.")
     .addField("**?help**", "> You're already looking at the command list, but if you didn't know, this command takes you to this very message. All of the commands that Mirage Ghost follows are listed here.")
+    .addField("**?hey**", "> This acts as a testing command to see if Mirage Ghost is responsive, or to check if commands will interfere with each other.")
     .addField("**?metas**", "> View all of the best loadouts for each raid boss in the game, which includes the Supers, weapons, Exotics, and mods for each member to have the most ideal run for easy clears.")
+    .addField("**?poll [question]** *(Admin Only)*", "> Set up a yes or no answer questionairre for members to submit their response to as a vote in the form of reactions. To use properly, type your question after the command in the same message.")
+    .addField("**?speedranks**", "> View all of the required raid time trials needed for each level of the server's ranking system. Higher ranks show faster times for a full clear in a particular raid.")
     .setThumbnail(bot.user.avatarURL)
     .setFooter('[If a command listed says it is coming soon, it does not work and will be implemeted at a later date. Thank you for your patience. ~Jy1e]');
   
