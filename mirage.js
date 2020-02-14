@@ -231,6 +231,14 @@ bot.on('message', msg => {
   if (!msg.content.startsWith(prefix) || msg.author.bot)
     
     return;
+	
+  else if (!msg.member.hasPermission('MANAGE_MESSAGES')) {
+
+    msg.channel.send('This action requires you to be able to have permission: MANAGE_MESSAGES');
+
+    msg.delete();
+
+  }
   
   else if (command === 'poll') {
     
