@@ -293,23 +293,23 @@ bot.on('message', msg => {
 
   }
 
-  else if (command === 'banish') //other than that tho...
+  else if (command === 'banish') { //other than that tho...
 
-  var bUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
+    var bUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
 
-  var bReason = args.join(" ").slice(22);
+    var bReason = args.join(" ").slice(22);
 
-    if (!bUser) {
+      if (!bUser) {
+ 
+        return msg.channel.send('This user does not exist. Please be sure that the name of the user you are trying to find is entered correctly');
 
-      return msg.channel.send('This user does not exist. Please be sure that the name of the user you are trying to find is entered correctly');
+        msg.delete();
 
-      msg.delete();
+      }
 
-    }
+      else {
 
-    else {
-
-      const banEmbed = new Discord.RichEmbed()
+        const banEmbed = new Discord.RichEmbed()
 
         .setDescription('~BANISHED TO THE SHADOW REAL@~')
         .setColor(0x58ffe2)
@@ -318,14 +318,16 @@ bot.on('message', msg => {
         .addField('Occured At', msg.createdAt)
         .addField('Reason', bReason);
 
-      let banRole = msg.member.guild.roles.find('name', 'SHADOW REAL@');
+        let banRole = msg.member.guild.roles.find('name', 'SHADOW REAL@');
 
-      msg.guild.member(bUser).addRole(banRole);
+        msg.guild.member(bUser).addRole(banRole);
 
-      msg.channel.send(banEmbed);
+        msg.channel.send(banEmbed);
 
-      msg.delete();
+        msg.delete();
 
-    }
+      }
+	  
+  }  
 
 });
