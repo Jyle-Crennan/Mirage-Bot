@@ -257,6 +257,7 @@ bot.on('message', msg => {
         .setColor(0x58ffe2)
         .setFooter('React to vote. Please do not add more reactions to the poll.')
         .setDescription(args.join(' '))
+        .setThumbnail()
         .setTitle(`Poll Created by ${msg.author.username}`);
       
       msg.channel.send(poll)
@@ -337,6 +338,7 @@ bot.on('message', msg => {
 });
 
 
+
 //D2 Infographics (?[activity]maps)
 
 bot.on ('message', msg => {
@@ -344,46 +346,53 @@ bot.on ('message', msg => {
   //Leviathan
   
   const underEmbed = new Discord.RichEmbed()
+  
     .setDescription("Map of the Leviathan Underbelly")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/UVt3gMR.jpg');
   
   const dogsEmbed = new Discord.RichEmbed()
+  
     .setDescription("Map of the Pleasure Gardens")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/VUKZ6Qa.png');
   
-  //Scourge
+  //Scourge of the Past
   
   const botzaEmbed = new Discord.RichEmbed()
+  
     .setDescription("Map of the Berserker Encounter")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/4oZq7ue.png');
   
   const sewerEmbed = new Discord.RichEmbed()
+  
     .setDescription("Map of the Sewers")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/ldCT2XI.png');
   
   const ablazedEmbed = new Discord.RichEmbed()
+  
     .setDescription("Map of Ablazed Glory Route")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/8Y9Vw5i.png');
   
   const primeEmbed = new Discord.RichEmbed()
-    .setDescription("CAP for INSURRECTION PRIME")
-    .addField('like...', 'it aint that hard to understand...but yanno')
+  
+    .setDescription("CAP for INSURRECTION PRIME\n(there's always that one dude that'll fuck it up lol)")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/tPY5Pfz.jpg');
   
   //Last Wish
   
   const eyesEmbed = new Discord.RichEmbed()
+  
     .setDescription("Eye Chart for Riven")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/zoQxwnF.png');
   
   const rivenEmbed = new Discord.RichEmbed()
+  
     .setDescription("Map of Riven Callouts")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/E3Zpb38r.jpg');
@@ -391,11 +400,13 @@ bot.on ('message', msg => {
   //Pit of Heresy
   
   const ogreEmbed = new Discord.RichEmbed()
+  
     .setDescription("Map of the Tunnels of Despair")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/ieLhWXu.jpg');
   
   const harrowEmbed = new Discord.RichEmbed()
+  
     .setDescription("Map of The Harrow")
     .setColor(0x58ffe2)
     .setImage('https://i.imgur.com/WMDLx83.png');
@@ -403,10 +414,8 @@ bot.on ('message', msg => {
   
   if (msg.content === "?levimaps") {
     
-    msg.delete();
-    
-    msg.channel.send(underEmbed);
-    
+    msg.delete();   
+    msg.channel.send(underEmbed);    
     msg.channel.send(dogsEmbed);
     
   }
@@ -414,33 +423,25 @@ bot.on ('message', msg => {
   else if (msg.content === "?sotpmaps") {
   
     msg.delete();
-    
-    msg.channel.send(botzaEmbed);
-    
-    msg.channel.send(sewerEmbed);
-    
-    msg.channel.send(ablazedEmbed);
-    
+    msg.channel.send(botzaEmbed);    
+    msg.channel.send(sewerEmbed);   
+    msg.channel.send(ablazedEmbed);    
     msg.channel.send(primeEmbed);
     
   }
   
   else if (msg.content === "?lwmaps") {
    
-    msg.delete();
-    
-    msg.channel.send(eyesEmbed);
-    
+    msg.delete();    
+    msg.channel.send(eyesEmbed);    
     msg.channel.send(rivenEmbed);
     
   }
   
   else if (msg.content === "?pitmaps") {
     
-    msg.delete();
-    
-    msg.channel.send(ogreEmbed);
-    
+    msg.delete();   
+    msg.channel.send(ogreEmbed);  
     msg.channel.send(harrowEmbed);
     
   }
