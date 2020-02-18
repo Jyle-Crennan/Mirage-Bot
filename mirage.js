@@ -174,6 +174,7 @@ bot.on('message', msg => {
     .addField("**?metas**", "> View all of the best loadouts for each raid boss in the game, which includes the Supers, weapons, Exotics, and mods for each member to have the most ideal run for easy clears.")
     .addField("**?poll [question]** *(Admin Only)*", "> Set up a yes or no answer questionairre for members to submit their response to as a vote in the form of reactions. To use properly, type your question after the command in the same message.")
     .addField("**?speedranks**", "> View all of the required raid time trials needed for each level of the server's ranking system. Higher ranks show faster times for a full clear in a particular raid.")
+    .addField("**?[activity]maps**", "> Allows you to view several helpful infographics, such as maps or charts, from raids and dungeons in D2. The latest version of Mirage-Ghost contains the following '[activity]' tags: levi, sotp, lw, pit.")
     .setThumbnail(bot.user.avatarURL)
     .setFooter('[If a command listed says it is coming soon, it does not work and will be implemeted at a later date. Thank you for your patience. ~Jy1e]');
   
@@ -333,4 +334,114 @@ bot.on('message', msg => {
 	  
   }  
 
+});
+
+
+//D2 Infographics (?[activity]maps)
+
+bot.on ('message', msg => {
+  
+  //Leviathan
+  
+  const underEmbed = new Discord.RichEmbed()
+    .setDescription("Map of the Leviathan Underbelly")
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/UVt3gMR.jpg');
+  
+  const dogsEmbed = new Discord.RichEmbed()
+    .setDescription("Map of the Pleasure Gardens")
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/VUKZ6Qa.png');
+  
+  //Scourge
+  
+  const botzaEmbed = new Discord.RichEmbed()
+    .setDescription("Map of the Berserker Encounter")
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/4oZq7ue.png');
+  
+  const sewerEmbed = new Discord.RichEmbed()
+    .setDescription("Map of the Sewers")
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/ldCT2XI.png');
+  
+  const ablazedEmbed = new Discord.RichEmbed()
+    .setDescription("Map of Ablazed Glory Route")
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/8Y9Vw5i.png');
+  
+  const primeEmbed = new Discord.RichEmbed()
+    .setDescription("CAP for INSURRECTION PRIME")
+    .addField('like...', 'it aint that hard to understand...but yanno')
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/tPY5Pfz.jpg');
+  
+  //Last Wish
+  
+  const eyesEmbed = new Discord.RichEmbed()
+    .setDescription("Eye Chart for Riven")
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/zoQxwnF.png');
+  
+  const rivenEmbed = new Discord.RichEmbed()
+    .setDescription("Map of Riven Callouts")
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/E3Zpb38r.jpg');
+  
+  //Pit of Heresy
+  
+  const ogreEmbed = new Discord.RichEmbed()
+    .setDescription("Map of the Tunnels of Despair")
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/ieLhWXu.jpg');
+  
+  const harrowEmbed = new Discord.RichEmbed()
+    .setDescription("Map of The Harrow")
+    .setColor(0x58ffe2)
+    .setImage('https://i.imgur.com/WMDLx83.png');
+  
+  
+  if (msg.content === "?levimaps") {
+    
+    msg.delete();
+    
+    msg.channel.send(underEmbed);
+    
+    msg.channel.send(dogsEmbed);
+    
+  }
+  
+  else if (msg.content === "?sotpmaps") {
+  
+    msg.delete();
+    
+    msg.channel.send(botzaEmbed);
+    
+    msg.channel.send(sewerEmbed);
+    
+    msg.channel.send(ablazedEmbed);
+    
+    msg.channel.send(primeEmbed);
+    
+  }
+  
+  else if (msg.content === "?lwmaps") {
+   
+    msg.delete();
+    
+    msg.channel.send(eyesEmbed);
+    
+    msg.channel.send(rivenEmbed);
+    
+  }
+  
+  else if (msg.content === "?pitmaps") {
+    
+    msg.delete();
+    
+    msg.channel.send(ogreEmbed);
+    
+    msg.channel.send(harrowEmbed);
+    
+  }
 });
