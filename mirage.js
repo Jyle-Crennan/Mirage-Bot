@@ -24,9 +24,9 @@ bot.on('message', msg => {
     msg.delete();
     msg.channel.send('Eyes up!');
   }
+	}
 	catch (err) {
 		catchErr(err, msg); }
-	}
 });
 
 
