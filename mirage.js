@@ -26,6 +26,7 @@ bot.on('message', msg => {
   }
 	catch (err) {
 		catchErr(err, msg); }
+	}
 });
 
 
