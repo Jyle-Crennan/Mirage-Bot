@@ -17,10 +17,6 @@ bot.on('message', msg => {
     msg.delete();
     msg.channel.send('Eyes up!');
   }
-  else if (msg.content === '?marco') {
-    msg.delete();
-    msg.channel.send('Polo!');
-  }
 });
 
 
