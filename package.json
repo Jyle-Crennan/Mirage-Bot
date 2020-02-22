@@ -11,7 +11,7 @@
   "dependencies": {
     "discord.js": "^11.5.1"
   }
-  "engines": {
+  "engines" {
     "node": "12.14.0"
   }
 }
