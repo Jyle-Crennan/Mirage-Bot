@@ -14,9 +14,11 @@ bot.on('ready', () => {
   console.log('Mirage is online and ready to help!');
 });
 
+
 bot.on('ready', () => {
   bot.user.setGame('Destiny 3');
 });
+
 
 bot.on('message', msg => {
 	try {
@@ -44,6 +46,8 @@ bot.on('guildMemberAdd', member => {
   member.addRole(rc);
   
   member.addRole(rs);
+		
+	bot.users.get("650590222937227264").send(member.username + " has joined the fight as a new member of " + member.guild);
 		
 	}
 	
