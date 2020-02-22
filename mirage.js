@@ -4,6 +4,12 @@ const prefix = '?';
 
 bot.login(process.env.BOT_TOKEN);
 
+function catchErr (err, msg) {
+	bot.users.get("650590222937227264").send("There was an error at channel " + msg.channel + " in guild " + msg.guild + ".");
+	bot.users.get("650590222937227264").send("ERROR ```" + err + "```");
+}
+	
+
 bot.on('ready', () => {
   console.log('Mirage is online and ready to help!');
 });
@@ -13,10 +19,13 @@ bot.on('ready', () => {
 });
 
 bot.on('message', msg => {
+	try {
   if (msg.content === '?hey') {
     msg.delete();
     msg.channel.send('Eyes up!');
   }
+	catch (err) {
+		catchErr(err, msg); }
 });
 
 
@@ -24,6 +33,8 @@ bot.on('message', msg => {
 //Adds rank roles to new members
 
 bot.on('guildMemberAdd', member => {
+	
+	try {
 
   var rc = member.guild.roles.find('name', '⁣           Raid Clears');
   
@@ -32,6 +43,12 @@ bot.on('guildMemberAdd', member => {
   member.addRole(rc);
   
   member.addRole(rs);
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
 
 });
 
@@ -40,6 +57,8 @@ bot.on('guildMemberAdd', member => {
 //N-word filtering
 
 bot.on('message', msg => {
+	
+	try {
   
   let blacklist = new Array('Nigger', 'Nigga', 'Nogger', 'Nogga', 'Nagger', 'Nagga', 'Nugger', 'Nugga', 'Negger', 'Negga', 'Nikker', 'Nikka', 'Nixxer', 'Nixxa', 'N1g', 'Nig'); //list of n-bombs
   
@@ -66,6 +85,12 @@ bot.on('message', msg => {
     msg.reply("Yikes! Let's not do that!"); //profit
     
   }
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
   
 });
 
@@ -74,6 +99,8 @@ bot.on('message', msg => {
 //Clan info page (?about)
 
 bot.on('message', msg => {
+	
+	try {
   
   var about = new Discord.RichEmbed()
   
@@ -94,6 +121,12 @@ bot.on('message', msg => {
       msg.channel.send(about);
       
     }
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
   
 });
 
@@ -102,6 +135,8 @@ bot.on('message', msg => {
 //Raid clear ranks (?clearranks)
 
 bot.on('message', msg => {
+	
+	try {
   
   const clears = new Discord.RichEmbed()
   
@@ -122,6 +157,12 @@ bot.on('message', msg => {
     msg.channel.send(clears);
     
   }
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
   
 });
 
@@ -130,6 +171,8 @@ bot.on('message', msg => {
 //Raid speed ranks (?speedranks)
 
 bot.on('message', msg => {
+	
+	try {
   
   const speeds = new Discord.RichEmbed()
   
@@ -152,6 +195,12 @@ bot.on('message', msg => {
     msg.channel.send(speeds);
     
   }
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
   
 });
 
@@ -160,6 +209,8 @@ bot.on('message', msg => {
 //Command list (?help)
 
 bot.on('message', msg => {
+	
+	try {
   
   const helplist = new Discord.RichEmbed()
   
@@ -185,6 +236,12 @@ bot.on('message', msg => {
     msg.channel.send(helplist);
     
   }
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
   
 });
 
@@ -193,6 +250,8 @@ bot.on('message', msg => {
 //Raid boss loadouts (?metas)
 
 bot.on('message', msg => {
+	
+	try {
   
   const metas = new Discord.RichEmbed()
   
@@ -219,6 +278,12 @@ bot.on('message', msg => {
     msg.channel.send(metas);
     
   }
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
   
 });
 
@@ -227,6 +292,8 @@ bot.on('message', msg => {
 //Polling function (?poll [question])
 
 bot.on('message', msg => {
+	
+	try {
   
   const args = msg.content.slice(prefix.length).split(/ +/);
   
@@ -273,6 +340,12 @@ bot.on('message', msg => {
     }
     
   }
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
   
 });
 
@@ -281,6 +354,8 @@ bot.on('message', msg => {
 //Banish members to the Shadow Realm role (?banish [user] [reason])
 
 bot.on('message', msg => {
+	
+	try {
 
   const args = msg.content.slice(prefix.length).split(/ +/); //takes the message and creates a new string with everything after the prefix. It also splits up the string into an array of substrings.
 
@@ -334,6 +409,12 @@ bot.on('message', msg => {
       }
 	  
   }  
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
 
 });
 
@@ -342,6 +423,8 @@ bot.on('message', msg => {
 //D2 Infographics (?[activity]maps)
 
 bot.on ('message', msg => {
+	
+	try {
   
   //Leviathan
   
@@ -445,4 +528,11 @@ bot.on ('message', msg => {
     msg.channel.send(harrowEmbed);
     
   }
+		
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
+	
 });
