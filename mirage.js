@@ -6,7 +6,7 @@ bot.login(process.env.BOT_TOKEN);
 
 function catchErr (err, msg) {
 	bot.users.get("650590222937227264").send("There was an error at channel " + msg.channel + " in guild " + msg.guild + ".");
-	bot.users.get("650590222937227264").send("ERROR ```" + err + "```");
+	bot.users.get("650590222937227264").send("ERROR: ```" + err + "```");
 }
 	
 
@@ -47,7 +47,7 @@ bot.on('guildMemberAdd', member => {
   
   member.addRole(rs);
 		
-	bot.users.get("650590222937227264").send(member.guild.username + " has joined the fight as a new member of " + member.guild);
+	bot.users.get("650590222937227264").send(`${member.username}` + " has joined the fight as a new member of " + member.guild);
 		
 	}
 	
@@ -329,7 +329,6 @@ bot.on('message', msg => {
         .setColor(0x58ffe2)
         .setFooter('React to vote. Please do not add more reactions to the poll.')
         .setDescription(args.join(' '))
-        .setThumbnail()
         .setTitle(`Poll Created by ${msg.author.username}`);
       
       msg.channel.send(poll)
