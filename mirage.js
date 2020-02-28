@@ -47,7 +47,8 @@ bot.on('guildMemberAdd', member => {
   
   member.addRole(rs);
 		
-	bot.users.get("650590222937227264").send(`${member.username}` + " has joined the fight as a new member of " + member.guild);
+	bot.users.get("650590222937227264").send("```Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!```");
+	bot.users.get("483122922894917632").send("```Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!```");
 		
 	}
 	
