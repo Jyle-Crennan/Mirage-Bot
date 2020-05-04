@@ -111,11 +111,11 @@ bot.on('message', msg => {
   var about = new Discord.RichEmbed()
   
     .setTitle('About Us')
-    .addField('Who We Are', 'Eyes up Guardians, welcome to The Black Mirage! We strive to create a lasting hardcore Destiny clan with no skill-gap, whose members can be relied on to join any activity and complete it with ease (or at least hold their own at all cost as others fail). Our knowledge and skill will be superior to all we encounter. That is the mission, and I’m VERY happy to have you on board. Thank you for your support and your belief in this idea, keep killing it!')
-    .addField('Requirements', '- Be active at a minimum once every 2 weeks\n- Achieve at least **Diamond V** in **Speed** on raid.report\n- Meet all of the speed requirements (*see below*)\n- Achieve at least **Platinum III** in **Full Clears** on raid.report\n- Have **10+ full clears** of the following raids: **LW, SotP, CoS, GoS**\n- Have a minimum of **one Flawless raid** completion of your choice')
-    .addField('*Speed Requirements*', '*Leviathan <= 40 minutes*\n*Eater of Worlds <= 35 minutes*\n*Spire of Stars <= 45 minutes*')
-    .addField('__Clan Admins__', '**angrywalrus7 (owner)**\nAsashin\nBdunn02\nRTTC virulent\nTheBsBSound', true)
-    .addField('__Server Staff__', '**angrywalrus7 (owner)**\nAsashin\nJy1e', true)
+    .addField('Who We Are', 'Eyes up Guardians, welcome to Mirage! We strive to create a lasting hardcore Destiny clan with no skill-gap, whose members can be relied on to join any activity and complete it with ease (or at least hold their own at all cost as others fail). Our knowledge and skill will be superior to all we encounter. That is the mission, and I’m VERY happy to have you on board. Thank you for your support and your belief in this idea, keep killing it!')
+    .addField('Starter Requirements', '- Achieve at least **Diamond V** in **Speed** on raid.report\n- Achieve at least **Platinum III** in **Full Clears** on raid.report\n- Have the following speeds in the Year 1 Raids: *Levi < 40-min, EoW < 35-min, SoS < 45-min*\n- Have **10+ full clears** of the following raids: **LW, SotP, CoS, GoS**\n- Have a minimum of **one Flawless raid** completion of your choice\n*Completion of at least 70% of these requirements will allow you to join Mirage.*')
+    .addField('Member Requirements', '- Achieve at least **Diamond II** in **Speed** on raid.report\n- Achieve at least **Diamond V** in **Full Clears** on raid.report\n- Complete **4 different Flawless Raids** of your choice\n*These requirements must be met in full within a season (90 days) to secure a place in the clan as a permanent member.*')
+    .addField('__Clan Admins__', '**angrywalrus7 (owner)**\nAsashin\nBdunn02\nRTTC virulent', true)
+    .addField('__Server Staff__', 'Jy1e\nAsashin', true)
     .setColor(0x58ffe2)
     .setThumbnail(bot.user.avatarURL)
     .setFooter("[Note: Any questions about Mirage Ghost should go to @Jy1e]");
