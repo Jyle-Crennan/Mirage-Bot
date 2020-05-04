@@ -548,7 +548,7 @@ bot.on('message', msg => {
 
 	try {
 		
-	const quotes = newArray("I don't even have time to explain why I don't have time to explain.", 
+	const quotes = ["I don't even have time to explain why I don't have time to explain.", 
 	"No word from Fenchurch today.", 
 	"Whether we wanted it or not, we’ve stepped into a war with the Cabal on Mars. So let’s get to taking out their command, one by one. Valus Ta’aurc. From what I can gather he commands the Siege Dancers from an Imperial Land Tank outside of Rubicon. He's well protected, but with the right team, we can punch through those defences, take this beast out, and break their grip on Freehold.", 
 	"Taniks has no House. He kneels before no banner, owes allegiance to no Kell. He is a murderer, and very good at what he does. I have been tracking him since Wolves broke their chains, yes? Now Taniks works for Wolf pack. But not for long.", 
@@ -566,7 +566,7 @@ bot.on('message', msg => {
 	"Fitting your Traveler would send you to face me once more. Look upon me. Dominus of the Red Legion, annihilator of suns, razer of a thousand worlds, slayer of gods, and conqueror of the Light! I... AM... GHAUL! And I have become legend!", 
 	"One little, two little, three little Hive. You killed so many, now none are alive.", 
 	"Am I supposed to celebrate death? It's a time of mourning our lost, yet everyone is... smiling. Candy will not save you! Sugar is a fickle friend. People say *I* am disturbing. Happy Festival of the Lost, I suppose.", 
-	"Tired of punching everything, [Titans]? Perhaps relax a little, and pick up a book.");
+	"Tired of punching everything, [Titans]? Perhaps relax a little, and pick up a book."];
 
 	var n = Math.floor(Math.random()*quotes.length);
 
