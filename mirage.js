@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const prefix = '\';
+const prefix = '%';
 
 bot.login(process.env.BOT_TOKEN);
 
@@ -22,7 +22,7 @@ bot.on('ready', () => {
 
 bot.on('message', msg => {
 	try {
-  if (msg.content === '\hey') {
+  if (msg.content === '%hey') {
     msg.delete();
     msg.channel.send('Eyes up!');
   }
@@ -102,7 +102,7 @@ bot.on('message', msg => {
 
 
 
-//Clan info page (?about)
+//Clan info page (%about)
 
 bot.on('message', msg => {
 	
@@ -120,7 +120,7 @@ bot.on('message', msg => {
     .setThumbnail(bot.user.avatarURL)
     .setFooter("[Note: Any questions about Mirage Ghost should go to @Jy1e]");
   
-    if (msg.content === '\about') {
+    if (msg.content === '%about') {
       
       msg.delete();
       
@@ -138,7 +138,7 @@ bot.on('message', msg => {
 
 
 
-//Raid clear ranks (?clearranks)
+//Raid clear ranks (%clearranks)
 
 bot.on('message', msg => {
 	
@@ -156,7 +156,7 @@ bot.on('message', msg => {
     .setThumbnail('https://safeboost.net/wp-content/uploads/2019/04/raids-destiny-2.png')
     .setFooter('***All ranks are subject to change if need be');
   
-  if (msg.content === '\clearranks') {
+  if (msg.content === '%clearranks') {
     
     msg.delete();
     
@@ -174,7 +174,7 @@ bot.on('message', msg => {
 
 
 
-//Raid speed ranks (?speedranks)
+//Raid speed ranks (%speedranks)
 
 bot.on('message', msg => {
 	
@@ -194,7 +194,7 @@ bot.on('message', msg => {
     .setThumbnail('https://safeboost.net/wp-content/uploads/2019/04/raids-destiny-2.png')
     .setFooter('***All ranks are subject to change if need be');
   
-  if (msg.content === '\speedranks') {
+  if (msg.content === '%speedranks') {
     
     msg.delete();
     
@@ -212,7 +212,7 @@ bot.on('message', msg => {
 
 
 
-//Command list (?help)
+//Command list (%help)
 
 bot.on('message', msg => {
 	
@@ -222,20 +222,20 @@ bot.on('message', msg => {
   
     .setTitle('Command List')
     .setColor(0x58ffe2)
-    .addField("**\about**", "> View the clan's mission statement, in-game requirements in order to join, and the higher-ups in charge of everything. You can see more information not listed in the 'rules-and-regs' and 'announcements' chats.")
-    .addField("**\banish [user] [reason]** *(Admin Only)*", "> You REALLY don't want to be on the recieving end of this. It is not a ban, but more of a warning and acts as a way to publicly humiliate fools lmaooo.")
-    .addField("**\calc [x] [y] [z]**", "> Serves as a damage calculator that simply takes in a damage value (x), the weapon type (y), and the weapon's fire rate (z) which will return the potential DPS yield for the weapon. Also, a list of other factors will be included, such as Luna Well, applied debuffs, and perks unique to the weapon type.\n[COMING SOON]")
-    .addField("**\clearranks**", "> View all of the required raid completions needed for each level of the server's ranking system. Higher ranks show more total clears in a particular raid.")
-    .addField("**\help**", "> You're already looking at the command list, but if you didn't know, this command takes you to this very message. All of the commands that Mirage Ghost follows are listed here.")
-    .addField("**\hey**", "> This acts as a testing command to see if Mirage Ghost is responsive, or to check if commands will interfere with each other.")
-    .addField("**\metas**", "> View all of the best loadouts for each raid boss in the game, which includes the Supers, weapons, Exotics, and mods for each member to have the most ideal run for easy clears.")
-    .addField("**\poll [question]** *(Admin Only)*", "> Set up a yes or no answer questionairre for members to submit their response to as a vote in the form of reactions. To use properly, type your question after the command in the same message.")
-    .addField("**\speedranks**", "> View all of the required raid time trials needed for each level of the server's ranking system. Higher ranks show faster times for a full clear in a particular raid.")
-    .addField("**\[activity]maps**", "> Allows you to view several helpful infographics, such as maps or charts, from raids and dungeons in D2. The latest version of Mirage-Ghost contains the following '[activity]' tags: levi, sotp, lw, pit.")
+    .addField("**%about**", "> View the clan's mission statement, in-game requirements in order to join, and the higher-ups in charge of everything. You can see more information not listed in the 'rules-and-regs' and 'announcements' chats.")
+    .addField("**%banish [user] [reason]** *(Admin Only)*", "> You REALLY don't want to be on the recieving end of this. It is not a ban, but more of a warning and acts as a way to publicly humiliate fools lmaooo.")
+    .addField("**%calc [x] [y] [z]**", "> Serves as a damage calculator that simply takes in a damage value (x), the weapon type (y), and the weapon's fire rate (z) which will return the potential DPS yield for the weapon. Also, a list of other factors will be included, such as Luna Well, applied debuffs, and perks unique to the weapon type.\n[COMING SOON]")
+    .addField("**%clearranks**", "> View all of the required raid completions needed for each level of the server's ranking system. Higher ranks show more total clears in a particular raid.")
+    .addField("**%help**", "> You're already looking at the command list, but if you didn't know, this command takes you to this very message. All of the commands that Mirage Ghost follows are listed here.")
+    .addField("**%hey**", "> This acts as a testing command to see if Mirage Ghost is responsive, or to check if commands will interfere with each other.")
+    .addField("**%metas**", "> View all of the best loadouts for each raid boss in the game, which includes the Supers, weapons, Exotics, and mods for each member to have the most ideal run for easy clears.")
+    .addField("**%poll [question]** *(Admin Only)*", "> Set up a yes or no answer questionairre for members to submit their response to as a vote in the form of reactions. To use properly, type your question after the command in the same message.")
+    .addField("**%speedranks**", "> View all of the required raid time trials needed for each level of the server's ranking system. Higher ranks show faster times for a full clear in a particular raid.")
+    .addField("**%[activity]maps**", "> Allows you to view several helpful infographics, such as maps or charts, from raids and dungeons in D2. The latest version of Mirage-Ghost contains the following '[activity]' tags: levi, sotp, lw, pit.")
     .setThumbnail(bot.user.avatarURL)
     .setFooter('[If a command listed says it is coming soon, it does not work and will be implemeted at a later date. Thank you for your patience. ~Jy1e]');
   
-  if (msg.content === '\help') {
+  if (msg.content === '%help') {
     
     msg.delete();
     
@@ -253,7 +253,7 @@ bot.on('message', msg => {
 
 
 
-//Raid boss loadouts (?metas)
+//Raid boss loadouts (%metas)
 
 bot.on('message', msg => {
 	
@@ -277,7 +277,7 @@ bot.on('message', msg => {
     .addField("__Sanctified Mind, Sol Inherent__ (GoS)", "- 6x Izanagi's + GLs\n- 5x Enhanced Relay Defender (per person)\n- 1x Shadowshot\n- 1x Well of Radiance w/ Luna\n- 1x Ward of Dawn")
     .setFooter('[Thanks you very much to @Floatz for this great information!]');
   
-  if (msg.content === '\metas') {
+  if (msg.content === '%metas') {
     
     msg.delete();
     
@@ -295,7 +295,7 @@ bot.on('message', msg => {
 
 
 
-//Polling function (?poll [question])
+//Polling function (%poll [question])
 
 bot.on('message', msg => {
 	
@@ -500,7 +500,7 @@ bot.on ('message', msg => {
     .setImage('https://i.imgur.com/WMDLx83.png');
   
   
-  if (msg.content === "\levimaps") {
+  if (msg.content === "%levimaps") {
     
     msg.delete();   
     msg.channel.send(underEmbed);    
@@ -508,7 +508,7 @@ bot.on ('message', msg => {
     
   }
   
-  else if (msg.content === "\sotpmaps") {
+  else if (msg.content === "%sotpmaps") {
   
     msg.delete();
     msg.channel.send(botzaEmbed);    
@@ -518,7 +518,7 @@ bot.on ('message', msg => {
     
   }
   
-  else if (msg.content === "\lwmaps") {
+  else if (msg.content === "%lwmaps") {
    
     msg.delete();    
     msg.channel.send(eyesEmbed);    
@@ -526,7 +526,7 @@ bot.on ('message', msg => {
     
   }
   
-  else if (msg.content === "\pitmaps") {
+  else if (msg.content === "%pitmaps") {
     
     msg.delete();   
     msg.channel.send(ogreEmbed);  
