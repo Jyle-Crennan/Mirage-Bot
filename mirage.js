@@ -541,3 +541,49 @@ bot.on ('message', msg => {
 		catchErr(err, msg); }
 	
 });
+
+
+
+bot.on('message', msg => {
+
+	try {
+		
+	const quotes = newArray("I don't even have time to explain why I don't have time to explain.", 
+	"No word from Fenchurch today.", 
+	"Whether we wanted it or not, we’ve stepped into a war with the Cabal on Mars. So let’s get to taking out their command, one by one. Valus Ta’aurc. From what I can gather he commands the Siege Dancers from an Imperial Land Tank outside of Rubicon. He's well protected, but with the right team, we can punch through those defences, take this beast out, and break their grip on Freehold.", 
+	"Taniks has no House. He kneels before no banner, owes allegiance to no Kell. He is a murderer, and very good at what he does. I have been tracking him since Wolves broke their chains, yes? Now Taniks works for Wolf pack. But not for long.", 
+	"The Light lives in all places... In all things... you can block it... even try to trap it... but the Light always finds it's way.", 
+	"Devotion inspires bravery, bravery leads to sacrifice, sacrifice leads to death. So, feel free to kill yourself.", 
+	"You just never quit, do you? Took out ghaul, woke up the Traveler, and now half of what I hear on the streets is how much you and your clan are making a difference. And that's why I started this whole clan thing in the first place. People are still waiting for the Vanguard to lead the way. But it's time for a change! And guardians like you are making it happen. No pressure.", 
+	"Never trust a Scorn! They're little balls of instinct. Shoot first, talk to it later.", 
+	"...a causal loop within the weapon's mechanism, suggesting that the firing process somehow binds space and time into...", 
+	"That Wizard came from the Moon.", 
+	"Let them feel every lash, every curse, every touch of malice that they first dealt to me.", 
+	"Don't play your hand unless you're sure you have that ace in the hole.", 
+	"Good fighters have contingency plans. Great fighters don't need them.", 
+	"If there is beauty in destruction, why not also in its delivery?", 
+	"Make 'em pay, Cap!", 
+	"Fitting your Traveler would send you to face me once more. Look upon me. Dominus of the Red Legion, annihilator of suns, razer of a thousand worlds, slayer of gods, and conqueror of the Light! I... AM... GHAUL! And I have become legend!", 
+	"One little, two little, three little Hive. You killed so many, now none are alive.", 
+	"Am I supposed to celebrate death? It's a time of mourning our lost, yet everyone is... smiling. Candy will not save you! Sugar is a fickle friend. People say *I* am disturbing. Happy Festival of the Lost, I suppose.", 
+	"Tired of punching everything, [Titans]? Perhaps relax a little, and pick up a book.");
+
+	var n = Math.floor(Math.random()*quotes.length);
+
+  if (msg.content === '%quote') {
+
+		msg.delete();
+
+    msg.channel.send(quotes[n]);
+
+		n = Math.floor(Math.random()*quotes.length);
+
+  }
+
+	catch (err) {
+
+		catchErr(err, msg); }
+
+	}
+	
+});
