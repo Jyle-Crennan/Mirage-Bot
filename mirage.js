@@ -579,11 +579,12 @@ bot.on('message', msg => {
 		n = Math.floor(Math.random()*quotes.length);
 
   }
+		
+	}
 
 	catch (err) {
 
 		catchErr(err, msg); }
 
-	}
 	
 });
