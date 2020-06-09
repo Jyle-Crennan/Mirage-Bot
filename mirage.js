@@ -88,9 +88,9 @@ bot.on('message', msg => {
     
     msg.delete(); //gets rid of n-bomb message
 	  
-	msg.author.ban({reason: "Banned for trying to drop N-bombs."}).then(() => {
+	msg.author.kick({reason: "Banned for trying to drop N-bombs."}).then(() => {
 				   
-					msg.reply(`${msg.author} was banned for dropping a fat N-bomb.`);
+					msg.reply(`${msg.author} was kicked for dropping a fat N-bomb.`);
 				   
 				   });
 		
