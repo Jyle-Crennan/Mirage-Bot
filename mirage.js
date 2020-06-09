@@ -88,11 +88,11 @@ bot.on('message', msg => {
     
     msg.delete(); //gets rid of n-bomb message
 				   
-	msg.reply(`${msg.author} was put in time out for dropping a fat N-bomb.`);
+	msg.channel.send(`${msg.author} was put in time out for dropping a fat N-bomb.`);
 	  
 	const idiot = msg.guild.member(msg.author);
 	  
-	var timeOut = idiot.guild.roles.cache.find(role => role.name === "Time Out");
+	var timeOut = idiot.guild.roles.find(role => role.name === "Time Out");
 
 	idiot.roles.add(timeOut);
 	
