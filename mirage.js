@@ -41,7 +41,7 @@ bot.on('guildMemberAdd', member => {
 
   var rc = member.guild.roles.find('name', '⁣           Raid Clears');
   
-  var rs = member.guild.roles.find('name', '⁣           Raid Speed')
+  var rs = member.guild.roles.find('name', '⁣           Raid Speed');
 	
   member.addRole(rc);
   
@@ -92,9 +92,9 @@ bot.on('message', msg => {
 	  
 	const idiot = msg.guild.member(msg.author);
 	  
-	var timeOut = idiot.guild.roles.find(role => role.name === "Time Out").then(() => {
+	var timeOut = idiot.guild.roles.find('names', "Time Out");
 
-	idiot.roles.add(timeOut); });
+	idiot.addRole(timeOut);
 	
   }
 		
