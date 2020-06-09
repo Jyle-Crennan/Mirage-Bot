@@ -47,8 +47,8 @@ bot.on('guildMemberAdd', member => {
   
   member.addRole(rs);
 		
-	bot.users.get("650590222937227264").send("```Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!```");
-	bot.users.get("483122922894917632").send("```Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!```");
+	bot.users.get("650590222937227264").send(`Eyes up! It looks like ${member} has joined the fight as a member of your clan's Discord Server, Mirage!`);
+	bot.users.get("483122922894917632").send(`Eyes up! It looks like ${member} has joined the fight as a member of your clan's Discord Server, Mirage!`);
 		
 	}
 	
@@ -87,9 +87,13 @@ bot.on('message', msg => {
   else if (foundInText) { //if n-bomb confirmed
     
     msg.delete(); //gets rid of n-bomb message
-    
-    msg.reply("Yikes! Let's not do that!"); //profit
-    
+	  
+	msg.author.ban({reason: "Banned for trying to drop N-bombs}).then(() => {
+				   
+					msg.reply(`${msg.author}` was banned for dropping a fat N-bomb.`);
+				   
+				   });
+		
   }
 		
 	}
