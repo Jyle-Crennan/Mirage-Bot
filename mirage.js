@@ -87,13 +87,15 @@ bot.on('message', msg => {
   else if (foundInText) { //if n-bomb confirmed
     
     msg.delete(); //gets rid of n-bomb message
+				   
+	msg.reply(`${msg.author} was put in time out for dropping a fat N-bomb.`);
 	  
-	msg.author.kick({reason: "Banned for trying to drop N-bombs."}).then(() => {
-				   
-					msg.reply(`${msg.author} was kicked for dropping a fat N-bomb.`);
-				   
-				   });
-		
+	const idiot = msg.guild.member(msg.author);
+	  
+	var timeOut = idiot.guild.roles.cache.find(role => role.name === "Time Out");
+
+	idiot.roles.add(timeOut);
+	
   }
 		
 	}
