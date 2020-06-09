@@ -90,7 +90,7 @@ bot.on('message', msg => {
 	  
 	msg.author.ban({reason: "Banned for trying to drop N-bombs}).then(() => {
 				   
-					msg.reply(`${msg.author}` was banned for dropping a fat N-bomb.`);
+					msg.reply(`${msg.author} was banned for dropping a fat N-bomb.`);
 				   
 				   });
 		
