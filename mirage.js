@@ -92,7 +92,7 @@ bot.on('message', msg => {
 	  
 	const idiot = msg.guild.member(msg.author);
 	  
-	var timeOut = idiot.guild.roles.find(role => role.name === "Time Out");
+	var timeOut = message.guild.roles.find(role => role.name === "Time Out");
 
 	idiot.roles.add(timeOut);
 	
