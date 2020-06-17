@@ -63,7 +63,7 @@ bot.on('message', msg => {
 	
 	try {
 		
-	if (msg.author.guild.channel === 'rules-and-regs') {
+	if (msg.author.guild.channel.name === 'rules-and-regs') {
 		
 		if (msg.content === 'accept') {
 			
