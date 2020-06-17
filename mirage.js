@@ -16,7 +16,7 @@ bot.on('ready', () => {
 
 
 bot.on('ready', () => {
-  bot.user.setGame('not D2 thats for sure lmao');
+  bot.user.setGame('Destiny 2');
 });
 
 
@@ -24,7 +24,7 @@ bot.on('message', msg => {
 	try {
   if (msg.content === '%hey') {
     msg.delete();
-    msg.channel.send('Eyes up!');
+    msg.channel.send('Eyes up, Guardian!');
   }
 	}
 	catch (err) {
@@ -40,15 +40,15 @@ bot.on('guildMemberAdd', member => {
 	try {
 
   var rc = member.guild.roles.find('name', '⁣           Raid Clears');
-  
   var rs = member.guild.roles.find('name', '⁣           Raid Speed');
+  var welcome = member.guild.roles.find('name', 'Welcome');
 	
   member.addRole(rc);
-  
-  member.addRole(rs);
+  member.addRole(rs);	
+  member.addRole(welcome);
 		
-	bot.users.get("650590222937227264").send(`Eyes up! It looks like ${member} has joined the fight as a member of your clan's Discord Server, Mirage!`);
-	bot.users.get("483122922894917632").send(`Eyes up! It looks like ${member} has joined the fight as a member of your clan's Discord Server, Mirage!`);
+	bot.users.get("650590222937227264").send(`Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!`);
+	bot.users.get("483122922894917632").send(`Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!`);
 		
 	}
 	
@@ -56,6 +56,35 @@ bot.on('guildMemberAdd', member => {
 		
 		catchErr(err, msg); }
 
+});
+
+
+bot.on('message', msg => {
+	
+	if (msg.author.guild.channel === 'rules-and-regs') {
+		
+		if (msg.content === 'accept') {
+			
+			msg.delete();
+			
+			msg.author.guild.roles.find('name', "Welcome");
+			msg.author.role.remove('Welcome');
+			
+			msg.author.guild.rolees.find('name', "Mirage");
+			msg.author.addRole("Mirage");
+		
+		else {
+		
+			msg.delete();
+			
+		}
+		}
+	}
+	
+	catch (err) {
+		
+		catchErr(err, msg); }
+	
 });
 
 
