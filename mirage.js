@@ -31,81 +31,50 @@ bot.on('message', msg => {
 		catchErr(err, msg); }
 });
 
-
-
 //Adds rank roles to new members
 
 bot.on('guildMemberAdd', member => {
-	
 	try {
-
-  var rc = member.guild.roles.find('name', '⁣           Raid Clears');
+  var rc = member.guild.roles.find('name', '⁣          Raid Clears');
   var rs = member.guild.roles.find('name', '⁣           Raid Speed');
   var welcome = member.guild.roles.find('name', 'Welcome');
 	
   member.addRole(rc);
-  member.addRole(rs);	
+  member.addRole(rs);
   member.addRole(welcome);
 		
-	bot.users.get("650590222937227264").send(`Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!`);
-	bot.users.get("483122922894917632").send(`Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!`);
+  bot.users.get("650590222937227264").send(`Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!`);
+  bot.users.get("483122922894917632").send(`Eyes up! It looks like a new Guardian has joined the fight as a member of your clan's Discord Server, Mirage!`);
 		
 	}
-	
 	catch (err) {
-		
 		catchErr(err, msg); }
-
 });
 
-
-
-
-
 //N-word filtering
-
 bot.on('message', msg => {
-	
 	try {
-  
   let blacklist = new Array('Nigger', 'Nigga', 'Nogger', 'Nogga', 'Nagger', 'Nagga', 'Nugger', 'Nugga', 'Negger', 'Negga', 'Nikker', 'Nikka', 'Nixxer', 'Nixxa', 'N1g', 'Nig'); //list of n-bombs
-  
   let except = 'Night';
-  
   let foundInText = false; //default text in messages (i.e. not an n-bomb)
-  
   for (var i in blacklist) { //goes through each n-bomb in the list
-    
     if (msg.content.toLowerCase().includes(blacklist[i].toLowerCase())) //if the message has one in it
-      
       foundInText = true; //n-bomb confirmed
-    
   }
-  
   if (msg.content.toLowerCase().includes(except.toLowerCase()))
-    
     return;
-  
   else if (foundInText) { //if n-bomb confirmed
-    
-    msg.delete(); //gets rid of n-bomb message
-				   
-	msg.channel.send(`${msg.author} was put in time out for dropping a fat N-bomb.`);
-	  
-	const idiot = msg.guild.member(msg.author);
-	  
-	var timeOut = idiot.guild.roles.find('name', "Time Out");
-
-	idiot.addRole(timeOut);
-	
+    msg.delete(); //gets rid of n-bomb message	   
+		msg.channel.send(`${msg.author} was put in time out for dropping a fat N-bomb.`);
+		const idiot = msg.guild.member(msg.author);
+		var timeOut = idiot.guild.roles.find('name', "Time Out");
+		if (msg.author.hasRole('name', "Member")) {
+			msg.author.roles.remove("Member"); }
+		idiot.addRole(timeOut);
   }
-		
 	}
-	
 	catch (err) {
-		
 		catchErr(err, msg); }
-  
 });
 
 
