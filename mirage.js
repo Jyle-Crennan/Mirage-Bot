@@ -59,39 +59,6 @@ bot.on('guildMemberAdd', member => {
 });
 
 
-bot.on('message', msg => {
-	
-	try {
-		
-	if (msg.author.guild.channel.name === 'rules-and-regs') {
-		
-		if (msg.content === 'accept') {
-			
-			msg.delete();
-			
-			msg.author.guild.roles.find('name', "Welcome");
-			msg.author.role.remove('Welcome');
-			
-			msg.author.guild.rolees.find('name', "Mirage");
-			msg.author.addRole("Mirage");
-		
-		}
-		
-		else {
-		
-			msg.delete();
-			
-		}
-		
-	}
-		
-	}
-	
-	catch (err) {
-		
-		catchErr(err, msg); }
-	
-});
 
 
 
