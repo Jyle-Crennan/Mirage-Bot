@@ -73,12 +73,14 @@ bot.on('message', msg => {
 			msg.author.guild.rolees.find('name', "Mirage");
 			msg.author.addRole("Mirage");
 		
+		}
+		
 		else {
 		
 			msg.delete();
 			
 		}
-		}
+		
 	}
 	
 	catch (err) {
