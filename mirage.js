@@ -16,7 +16,7 @@ bot.on('ready', () => {
 
 
 bot.on('ready', () => {
-  bot.user.setGame('Destiny 2');
+  bot.user.setGame('Destiny 2: Season of Arrival');
 });
 
 
@@ -61,6 +61,8 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('message', msg => {
 	
+	try {
+		
 	if (msg.author.guild.channel === 'rules-and-regs') {
 		
 		if (msg.content === 'accept') {
@@ -80,6 +82,8 @@ bot.on('message', msg => {
 			msg.delete();
 			
 		}
+		
+	}
 		
 	}
 	
