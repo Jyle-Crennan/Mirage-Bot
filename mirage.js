@@ -68,8 +68,8 @@ bot.on('message', msg => {
 		msg.channel.send(`${msg.author} was put in time out for dropping a fat N-bomb.`);
 		const idiot = msg.guild.member(msg.author);
 		var timeOut = idiot.guild.roles.find('name', "Time Out");
-		if (msg.author.hasRole('name', "Member")) {
-			msg.author.roles.remove("Member"); }
+		if (msg.author.hasRole('name', "Non-Member")) {
+			msg.author.roles.remove("Non-Member"); }
 		idiot.addRole(timeOut);
   }
 	}
